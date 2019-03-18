@@ -1,0 +1,9 @@
+package $packageName.view;
+
+import $packageName.interfaces.$sceneNameMVP;
+import $packageName.presenter.Imp$sceneNamePresenter;
+import android.support.v4.app.FragmentActivity;
+
+public class Imp$sceneNameActivity extends FragmentActivity implements $sceneName$sceneMVP.IView {
+    private final $sceneNameMVP.IPresenter iPresenter = new Imp$sceneNamePresenter(this);
+}

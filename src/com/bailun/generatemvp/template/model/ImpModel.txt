@@ -1,0 +1,11 @@
+package $packageName.model;
+
+import $packageName.interfaces.$sceneNameMVP;
+
+public class Imp$sceneNameModel implements $sceneNameMVP.IModel {
+    private final $sceneNameMVP.IPresenter iPresenter;
+
+    public Imp$sceneNameModel($sceneNameMVP.IPresenter iPresenter) {
+        this.iPresenter = iPresenter;
+    }
+}

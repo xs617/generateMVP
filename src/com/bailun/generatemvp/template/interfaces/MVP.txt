@@ -1,0 +1,10 @@
+package $packageName.interfaces;
+
+public interface $sceneNameMVP {
+    interface IView {
+    }
+    interface IPresenter {
+    }
+    interface IModel {
+    }
+}

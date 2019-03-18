@@ -1,0 +1,41 @@
+<idea-plugin>
+    <id>com.bailun.generatemvp</id>
+    <name>BaiLunMVPGenerator</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="https://www.fx110.com/home/about#bg_even">BaiLun</vendor>
+
+    <description><![CDATA[
+      generate mvp scene<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      first version<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="171.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="BaiLun" text="BaiLun" description="BaiLun menu">
+            <action id="BaiLun.GenerateMVP" class="com.bailun.generatemvp.GenerateMVP" text="GenerateMVP"
+                    description="生成mvp">
+            </action>
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </group>
+    </actions>
+
+</idea-plugin>
