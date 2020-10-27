@@ -2,8 +2,8 @@ package $packageName.view;
 
 import $packageName.interfaces.$sceneNameMVP;
 import $packageName.presenter.Imp$sceneNamePresenter;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.Fragment;
 
-public class Imp$sceneNameActivity extends FragmentActivity implements $sceneName$sceneMVP.IView {
+public class $sceneNameFragment  extends Fragment implements $sceneNameMVP.IView {
     private final $sceneNameMVP.IPresenter iPresenter = new Imp$sceneNamePresenter(this);
 }

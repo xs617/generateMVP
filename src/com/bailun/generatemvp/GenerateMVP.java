@@ -24,8 +24,8 @@ public class GenerateMVP extends AnAction {
         }
         GenerateMvpForm generateMvpForm = new GenerateMvpForm((moduleName, packageName, senseName, type) -> {
             mModuleName = moduleName;
-            mPackageName = packageName;
             mSceneName = senseName;
+            mPackageName = packageName + "." + mSceneName.toLowerCase();
             mSceneType = type;
             FileType viewType = null;
             switch (type) {
@@ -48,16 +48,17 @@ public class GenerateMVP extends AnAction {
         String content;
         String fileName = "";
         String modulePath = getModulePathString();
-        String packagePath = mPackageName.replace(".", "/") + "/" + mSceneName;
+        String packagePath = mPackageName.replace(".", "/");
         String suffix = "";
+        String prefix = "";
         switch (type) {
             case Activity:
-                fileName = "view/ImpActivity.txt";
+                fileName = "view/Activity.txt";
                 modulePath = modulePath + "/" + packagePath + "/view/";
                 suffix = "Activity";
                 break;
             case Fragment:
-                fileName = "view/ImpFragment.txt";
+                fileName = "view/Fragment.txt";
                 modulePath = modulePath + "/" + packagePath + "/view/";
                 suffix = "Fragment";
                 break;
@@ -65,11 +66,13 @@ public class GenerateMVP extends AnAction {
                 fileName = "presenter/ImpPresenter.txt";
                 modulePath = modulePath + "/" + packagePath + "/presenter/";
                 suffix = "Presenter";
+                prefix = "Imp";
                 break;
             case Model:
                 fileName = "model/ImpModel.txt";
                 modulePath = modulePath + "/" + packagePath + "/model/";
                 suffix = "Model";
+                prefix = "Imp";
                 break;
             case Interfaces:
                 fileName = "interfaces/MVP.txt";
@@ -79,7 +82,7 @@ public class GenerateMVP extends AnAction {
         }
         content = readTemplateFile(fileName);
         content = dealTemplateContent(content);
-        DataUtils.writeToFile(content, modulePath, mSceneName + suffix + ".java");
+        DataUtils.writeToFile(content, modulePath, prefix + mSceneName + suffix + ".java");
     }
 
     private String readTemplateFile(String fileName) {

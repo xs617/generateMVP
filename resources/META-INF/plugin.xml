@@ -2,7 +2,7 @@
     <id>com.bailun.generatemvp</id>
     <name>BaiLunMVPGenerator</name>
     <version>1.0</version>
-    <vendor email="support@yourcompany.com" url="https://www.fx110.com/home/about#bg_even">BaiLun</vendor>
+    <vendor email="wenjiarong@bailun.com" url="https://github.com/BailunMobileDev/Resource">BaiLun</vendor>
 
     <description><![CDATA[
       generate mvp scene<br>

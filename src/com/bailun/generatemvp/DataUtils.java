@@ -41,9 +41,11 @@ public class DataUtils {
             }
 
             File file = new File(classPath + className);
-            if (!file.exists()) {
-                file.createNewFile();
+            if (file.exists()) {
+                //已经存在不能覆盖
+                return;
             }
+            file.createNewFile();
             OutputStreamWriter write = new OutputStreamWriter(new FileOutputStream(file.getAbsoluteFile()), "UTF-8");
 //            FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(write);

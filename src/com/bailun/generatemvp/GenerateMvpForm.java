@@ -1,12 +1,15 @@
 package com.bailun.generatemvp;
 
-import gherkin.deps.com.google.gson.Gson;
+import com.google.gson.Gson;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class GenerateMvpForm extends JDialog {
     private JPanel contentPanel;
